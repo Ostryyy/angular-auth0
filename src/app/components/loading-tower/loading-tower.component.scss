@@ -1,0 +1,22 @@
+.tower-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    .block {
+        width: 50px;
+        height: 20px;
+        background-color: #00796b;
+        margin: 2px 0;
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

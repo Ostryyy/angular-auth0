@@ -1,1 +1,9 @@
+@if (auth.isLoading$ | async) {
+<div class="container">
+  <app-loading-tower></app-loading-tower>
+</div>
+
+}@else { @if (auth.isAuthenticated$ | async) {
+<button (click)="auth.logout()">Logout</button>
 <router-outlet></router-outlet>
+}@else {<router-outlet></router-outlet>} }
