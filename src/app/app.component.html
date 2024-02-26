@@ -1,8 +1,1 @@
-@if (auth.isAuthenticated$ | async) {
-<button (click)="auth.logout()">Logout</button>
-@if (auth.user$ |async; as user) {
-{{ user.email }}
-{{ user.picture }}
-} }@else {
-<button (click)="auth.loginWithRedirect()">Login</button>
-}
+<router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="left">
+    <div class="logo-holder"><h1>Angular auth0</h1></div>
+    <div class="content">
+      <app-quote-display />
+    </div>
+  </div>
+  <div class="right">
+    <h1>Get started</h1>
+    <div class="row">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="auth.loginWithRedirect()"
+      >
+        Log in
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="
+          auth.loginWithRedirect({
+            authorizationParams: {
+              screen_hint: 'signup'
+            }
+          })
+        "
+      >
+        Sign up
+      </button>
+    </div>
+  </div>
+</div>
