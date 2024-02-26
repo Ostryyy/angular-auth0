@@ -1,9 +1,40 @@
 @if (auth.isLoading$ | async) {
-<div class="container">
+<div class="container loading">
   <app-loading-tower></app-loading-tower>
 </div>
 
 }@else { @if (auth.isAuthenticated$ | async) {
-<button (click)="auth.logout()">Logout</button>
-<router-outlet></router-outlet>
+<div class="container">
+  <mat-toolbar color="primary"
+    ><a routerLink="/home">Angular auth0</a>
+    @if(auth.user$ | async; as user){
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <div class="container">
+        <img
+          width="30"
+          height="30"
+          class="profile-image-toolbar"
+          [src]="user.picture ?? 'assets/images/image-placeholder.png'"
+        />
+        <div class="user-expand">
+          {{ user.nickname }} <mat-icon>expand_more</mat-icon>
+        </div>
+      </div>
+    </button>
+    }
+  </mat-toolbar>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
 }@else {<router-outlet></router-outlet>} }
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon>account_circle</mat-icon> Profile
+  </button>
+  <button mat-menu-item (click)="auth.logout()">
+    <mat-icon>logout</mat-icon> Logout
+  </button>
+</mat-menu>

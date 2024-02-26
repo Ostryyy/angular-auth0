@@ -11,6 +11,10 @@ import { environment } from 'src/environments/environment';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingTowerComponent } from './components/loading-tower/loading-tower.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +24,10 @@ import { LoadingTowerComponent } from './components/loading-tower/loading-tower.
     BrowserAnimationsModule,
     ReactiveFormsModule,
     LoadingTowerComponent,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
 
     AuthModule.forRoot({
       ...environment.auth,

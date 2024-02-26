@@ -2,7 +2,42 @@
     width: 100%;
     height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    mat-toolbar {
+        justify-content: space-between;
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        button {
+            .container {
+                display: flex;
+                align-items: center;
+
+                .profile-image-toolbar {
+                    border-radius: 100%;
+                    margin-right: 8px;
+                }
+
+                .user-expand {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                }
+            }
+
+        }
+    }
+
+
+    &.loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        padding: 24px;
+    }
 }

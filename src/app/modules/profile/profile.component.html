@@ -1,0 +1,19 @@
+@if (user$ | async ; as user) {
+<mat-card class="profile-card">
+  <img
+    mat-card-image
+    [src]="user.picture"
+    alt="Profile picture"
+    width="150"
+    height="150"
+  />
+  <mat-card-header>
+    <mat-card-title>{{ user.nickname }}</mat-card-title>
+    <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Name: {{ user.name }}</p>
+    <p>Email Verified: {{ user.email_verified ? "Yes" : "No" }}</p>
+  </mat-card-content>
+</mat-card>
+}
