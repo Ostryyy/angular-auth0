@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   OnDestroy,
   ViewChild,
   ElementRef,
@@ -14,7 +13,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-quote-display',
   standalone: true,
   imports: [CommonModule],
-  template: `<div #quoteContainer></div>`,
+  template: `<div #quoteContainer class="quote-container"></div>`,
   styleUrls: ['./quote-display.component.scss'],
 })
 export class QuoteDisplayComponent implements AfterViewInit, OnDestroy {
